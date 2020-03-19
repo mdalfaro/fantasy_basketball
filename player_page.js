@@ -136,7 +136,7 @@ var input = getUrlVars()['Player'].split(/\s*\-\s*/g)
 var player_name = input[1] + ', ' + input[0]
 
 
-d3.csv("data/fanduel_01.csv", function(error, input_data) {
+d3.csv("data/fanduel.csv", function(error, input_data) {
 
 	// ######## Create data #########
 

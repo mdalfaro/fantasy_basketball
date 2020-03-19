@@ -135,6 +135,8 @@ var teamDict = {
 var input = getUrlVars()['Player'].split(/\s*\-\s*/g)
 var player_name = input[1] + ', ' + input[0]
 
+console.log(player_name)
+
 
 d3.csv("data/fanduel.csv", function(error, input_data) {
 
@@ -164,6 +166,7 @@ d3.csv("data/fanduel.csv", function(error, input_data) {
 			data.push(game); 
 		}
 	})
+
 	var date_range = d3.timeDays(d3.min(data, function(d) { return d.date; }),
 								 d3.max(data, function(d) { return d.date; }));
 	var player_dates = d3.map(data, function(d) {return d.date}).keys();

@@ -60,7 +60,7 @@ d3.selection.prototype.moveToBack = function() {
   });
 };
 
-d3.csv("projections.csv", function(error, fantasy_data) {
+d3.csv("data/projections.csv", function(error, fantasy_data) {
   if (error) {throw error};
   data = []
   fantasy_data.forEach(function(d) {
@@ -381,7 +381,7 @@ var initialized = false;
 
 function drawLineChart(player) {
 
-  var filepath = 'player_history/' + player.name + '.csv'
+  var filepath = 'data/player_history/' + player.name + '.csv'
 
   d3.csv(filepath, function(error, player_data) {
     if (error) {throw error};
@@ -540,6 +540,9 @@ function drawLineChart(player) {
     .style("font", "10px sans-serif")
     .attr("fill", "black")
     .text(player.name)
+    .on("click", function(d) {
+      console.log(player.name)
+    })
     .on("mouseover", function(d){
 
       // Highlight Text
